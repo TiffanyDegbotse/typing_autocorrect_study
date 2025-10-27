@@ -5,24 +5,6 @@
 **Outcomes:** Words per minute (WPM), Character error rate (CER)  
 **Scope:** Single participant, many trials (balanced across 4 cells)
 
-## Folder Structure
-data/
-raw/ # place exported CSV from the app here
-clean/ # cleaned CSV saved by analysis script
-prompts_easy.txt
-prompts_hard.txt
-collect/
-index.html # run this in your browser to collect data
-analyze/
-requirements.txt
-power_paired.py
-clean_and_analyze.py
-figures/
-report/
-presentation/
-
-markdown
-Copy code
 
 ## Quick Start
 
@@ -35,7 +17,7 @@ Edit `data/prompts_easy.txt` and `data/prompts_hard.txt` to your liking.
 - Complete all trials. Click **Download CSV** and save to `data/raw/typing_study_trials_<PID>.csv`.
 
 ### 3) Power analysis (optional first)
-```bash
+
 cd analyze
 pip install -r requirements.txt
 python power_paired.py
@@ -79,10 +61,6 @@ Keep raw data immutable; commit scripts/figures; cleaned CSV can be regenerated.
 License
 Academic use for course assignment.
 
-yaml
-Copy code
-
----
 
 # 13) References stub — `report/references.txt`
 
@@ -93,10 +71,6 @@ Copy code
 [3] Mobile keyboard predictive/auto-correct effects (lab/field studies).
 (Include URLs/DOIs as applicable.)
 
-pgsql
-Copy code
-
----
 
 # 14) What you do next (fast path)
 
@@ -107,10 +81,6 @@ Copy code
 5) Run analysis → paste printed stats into the **report template**.  
 6) Add plots to **slides**; each teammate opens one PR (README improvement, prompt set expansion, figure style tweak).
 
----
-
-If you want me to tailor the **prompt lists** (e.g., automatically select “hard” words using frequency bins) or to **auto-generate your slides content** once you have results, say the word and I’ll drop in those scripts/templates.
-::contentReference[oaicite:0]{index=0}
 
 
 
