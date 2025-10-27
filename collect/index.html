@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Typing Study: Autocorrect × Difficulty (Desktop)</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; max-width: 900px; margin: 24px auto; line-height: 1.45; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; }
+    .row { display: flex; gap: 12px; align-items: center; }
+    .label { width: 160px; font-weight: 600; color: #333; }
+    #prompt { font-size: 1.35rem; font-weight: 700; margin: 8px 0 12px; }
+    #typed { width: 100%; font-size: 1.15rem; padding: 10px; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #bbb; cursor: pointer; background:#fff; }
+    #done { display: none; }
+    #practice { display: none; }
+    .muted { color: #666; }
+    .pill { display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #ccc; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Typing Study (Desktop): Autocorrect × Difficulty</h1>
+
+  <div class="card">
+    <div><span class="label">Participant ID:</span><input id="pid" placeholder="e.g., T001" /></div>
+    <div class="row" style="margin-top:8px">
+      <div class="label">Target per cell:</div>
+      <input id="nPerCell" type="number" min="5" max="120" value="40" />
+      <div class="muted">Cells: EASY/AUTO, EASY/OFF, HARD/AUTO, HARD/OFF</div>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <div class="label">Practice trials:</div>
+      <input id="nPractice" type="number" min="0" max="50" value="10" />
+      <button id="start">Start</button>
+    </div>
+    <div id="status" class="muted" style="margin-top:6px">Fill in Participant ID, set counts, then click Start.</div>
+  </div>
+
+  <div id="practice" class="card">
+    <h3>Practice Block</h3>
+    <div class="muted">Type the prompt exactly, press Enter to submit. Practice has no autocorrect.</div>
+    <div><strong>Practice remaining:</strong> <span id="practiceRemain"></span></div>
+    <div id="practicePrompt" class="pill"></div>
+    <div class="row" style="margin-top:8px">
+      <input id="practiceTyped" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type here and press Enter"/>
+      <button id="practiceSkip">Skip</button>
+    </div>
+  </div>
+
+  <div id="trialCard" class="card" style="display:none">
+    <div class="row">
+      <div class="label">Trials remaining:</div>
+      <div><span id="remain"></span></div>
+    </div>
+    <div class="row">
+      <div class="label">Condition:</div>
+      <div><span id="cond" class="pill"></span></div>
+    </div>
+    <div class="row">
+      <div class="label">Difficulty:</div>
+      <div><span id="ptype" class="pill"></span></div>
+    </div>
+    <div id="prompt"></div>
+    <div class="row">
+      <input id="typed" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type here and press Enter"/>
+      <button id="skip">Skip</button>
+    </div>
+  </div>
+
+  <div id="done" class="card">
+    <h3>All trials complete ✅</h3>
+    <div class="row">
+      <button id="download">Download CSV</button>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+
+<script>
+// ====== CONFIG & HELPERS ======
+
+// Simple Levenshtein
+function lev(a,b){
+  const m=a.length,n=b.length; const dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
+  for(let i=0;i<=m;i++) dp[i][0]=i;
+  for(let j=0;j<=n;j++) dp[0][j]=j;
+  for(let i=1;i<=m;i++) for(let j=1;j<=n;j++){
+    dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  }
+  return dp[m][n];
+}
+function cer(truth, typed){ return lev(truth, typed)/Math.max(1, truth.length); }
+
+// Lightweight dictionary for autocorrect (extend as needed)
+const DICT = new Set([
+ "the","quick","fox","coffee","time","clear","results","write","code","great","work","campus","life","fast","typing","clean","data","model","check","happy","path",
+ "syzygy","test","quixotic","goal","mnemonic","trick","queueing","theory","afficionados","meet","schadenfreude","day","rhythmic","sync","aegis","of","order",
+ "phlegmatic","mood","coalesce","soon","hors","d'oeuvre","prep","apocryphal","tale","doppelganger","spot","ptarmigan","sight","chiaroscuro","art","lagniappe",
+ "gift","bricolage","build","anemone","bloom","caesura","line","ukulele","rhythm"
+]);
+
+function autocorrectInput(s){
+  const parts = s.split(/\s+/);
+  if (parts.length===0) return s;
+  const last = parts[parts.length-1];
+  if (!last) return s;
+  const low = last.toLowerCase();
+  if (DICT.has(low)) return s;
+  // find nearest within distance 1
+  let best = last, bestd = 2;
+  for (const w of DICT){
+    const d = lev(low, w);
+    if (d < bestd){ bestd=d; best=w; if (bestd===1) break; }
+  }
+  if (bestd<=1){
+    parts[parts.length-1] = (/[A-Z]/.test(last[0]) ? best[0].toUpperCase()+best.slice(1) : best);
+  }
+  return parts.join(" ");
+}
+
+// ====== PROMPTS ======
+async function loadText(path){
+  const res = await fetch(path);
+  const txt = await res.text();
+  return txt.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+}
+
+function shuffle(arr){
+  for (let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+// ====== STATE ======
+let participant="T000";
+let N_PER_CELL=40;
+let PRACTICE=10;
+let promptsEasy=[], promptsHard=[];
+let schedule=[], trialIdx=-1, startTime=0, backspaces=0, firstBackspaceTime=null;
+let current=null;
+let rows=[["participant","trial","condition","prompt_type","prompt","typed","ms","wpm","cer","backspaces","repair_ms"]];
+
+// ====== ELEMENTS ======
+const pidEl = document.getElementById('pid');
+const nPerCellEl = document.getElementById('nPerCell');
+const nPracticeEl = document.getElementById('nPractice');
+const statusEl = document.getElementById('status');
+const practiceCard = document.getElementById('practice');
+const practiceRemainEl = document.getElementById('practiceRemain');
+const practicePromptEl = document.getElementById('practicePrompt');
+const practiceTypedEl = document.getElementById('practiceTyped');
+
+const trialCard = document.getElementById('trialCard');
+const remainEl = document.getElementById('remain');
+const condEl = document.getElementById('cond');
+const ptypeEl = document.getElementById('ptype');
+const promptEl = document.getElementById('prompt');
+const typedEl = document.getElementById('typed');
+
+document.getElementById('start').onclick = init;
+
+async function init(){
+  participant = pidEl.value.trim() || "T000";
+  N_PER_CELL = Math.max(5, Math.min(120, parseInt(nPerCellEl.value||"40",10)));
+  PRACTICE = Math.max(0, Math.min(50, parseInt(nPracticeEl.value||"10",10)));
+  promptsEasy = await loadText("../data/clean/prompts_easy.txt");
+  promptsHard = await loadText("../data/clean/prompts_hard.txt");
+  if (promptsEasy.length===0 || promptsHard.length===0){
+    alert("Please populate data/prompts_easy.txt and data/prompts_hard.txt");
+    return;
+  }
+  buildSchedule();
+  statusEl.textContent = "Practice block starting…";
+  practiceCard.style.display="block";
+  startPractice();
+}
+
+let practiceLeft=0;
+function startPractice(){
+  practiceLeft = PRACTICE;
+  nextPractice();
+}
+function nextPractice(){
+  if (practiceLeft<=0){
+    practiceCard.style.display="none";
+    trialCard.style.display="block";
+    nextTrial();
+    return;
+  }
+  practiceLeft--;
+  practiceRemainEl.textContent = (practiceLeft+1);
+  practicePromptEl.textContent = promptsEasy[(practiceLeft) % promptsEasy.length];
+  practiceTypedEl.value = "";
+  practiceTypedEl.focus();
+}
+practiceTypedEl.addEventListener('keydown', e=>{
+  if (e.key==="Enter"){
+    e.preventDefault();
+    nextPractice();
+  }
+});
+document.getElementById('practiceSkip').onclick = nextPractice;
+
+function buildSchedule(){
+  schedule = [];
+  const cells = [
+    {cond:"AUTO", type:"EASY", pool:promptsEasy},
+    {cond:"OFF",  type:"EASY", pool:promptsEasy},
+    {cond:"AUTO", type:"HARD", pool:promptsHard},
+    {cond:"OFF",  type:"HARD", pool:promptsHard},
+  ];
+  for (const cell of cells){
+    for (let i=0;i<N_PER_CELL;i++){
+      const p = cell.pool[i % cell.pool.length];
+      schedule.push({condition:cell.cond, prompt_type:cell.type, prompt:p});
+    }
+  }
+  shuffle(schedule);
+}
+
+function nextTrial(){
+  trialIdx++;
+  if (trialIdx >= schedule.length){
+    trialCard.style.display="none";
+    document.getElementById('done').style.display="block";
+    return;
+  }
+  current = schedule[trialIdx];
+  condEl.textContent = current.condition;
+  ptypeEl.textContent = current.prompt_type;
+  promptEl.textContent = current.prompt;
+  remainEl.textContent = (schedule.length - trialIdx);
+  typedEl.value = ""; typedEl.focus();
+  backspaces = 0; firstBackspaceTime=null;
+  startTime = performance.now();
+}
+
+typedEl.addEventListener('keydown', (e)=>{
+  if (e.key === "Enter"){
+    e.preventDefault();
+    finishTrial(typedEl.value);
+    return;
+  }
+  if (e.key === "Backspace"){
+    backspaces++;
+    if (firstBackspaceTime===null) firstBackspaceTime = performance.now();
+  }
+});
+
+let autocorrectTimer = null;
+
+typedEl.addEventListener('input', ()=>{
+  if (!current || current.condition!=="AUTO") return;
+
+  clearTimeout(autocorrectTimer);
+  autocorrectTimer = setTimeout(()=>{
+    // only run autocorrect if user hasn't typed for 500 ms
+    const before = typedEl.value;
+    const corrected = autocorrectInput(before);
+    if (corrected !== before){
+      const pos = typedEl.selectionStart;
+      typedEl.value = corrected;
+      typedEl.selectionEnd = typedEl.selectionStart = pos;
+    }
+  }, 1000); // half a second delay
+});
+
+
+document.getElementById('skip').onclick = ()=>finishTrial(typedEl.value);
+
+function finishTrial(typed){
+  const end = performance.now();
+  const ms = end - startTime;
+  const minutes = ms/60000;
+  const wpm = ((typed.length/5)/minutes) || 0;
+  const c = cer(current.prompt, typed);
+  const repair_ms = (firstBackspaceTime==null) ? 0 : (end - firstBackspaceTime);
+  rows.push([
+    participant, trialIdx+1, current.condition, current.prompt_type,
+    current.prompt, typed, Math.round(ms), wpm.toFixed(2), c.toFixed(4),
+    backspaces, Math.round(repair_ms)
+  ]);
+  nextTrial();
+}
+
+document.getElementById('download').onclick = ()=>{
+  const csv = rows.map(r=>r.map(x=>String(x).replaceAll('"','""')).map(x=>`"${x}"`).join(",")).join("\n");
+  const blob = new Blob([csv], {type:"text/csv"});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `typing_study_trials_${participant}.csv`;
+  a.click();
+};
+
+document.getElementById('restart').onclick = ()=>location.reload();
+</script>
+</body>
+</html>
