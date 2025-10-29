@@ -91,9 +91,9 @@ function cer(truth, typed){ return lev(truth, typed)/Math.max(1, truth.length); 
 
 // Lightweight dictionary for autocorrect (extend as needed)
 const DICT = new Set([
- "the","quick","fox","coffee","time","clear","results","write","code","great","work","campus","life","fast","typing","clean","data","model","check","happy","path",
+ "the", "duke","pratt","quick","fox","coffee","time","clear","results","write","code","great","work","campus","life","fast","typing","clean","data","model","check","happy","path",
  "syzygy","test","quixotic","goal","mnemonic","trick","queueing","theory","afficionados","meet","schadenfreude","day","rhythmic","sync","aegis","of","order",
- "phlegmatic","mood","coalesce","soon","hors","d'oeuvre","prep","apocryphal","tale","doppelganger","spot","ptarmigan","sight","chiaroscuro","art","lagniappe",
+ "phlegmatic","mood", "good","coalesce","soon","hors","d'oeuvre","prep","apocryphal","tale","doppelganger","spot","ptarmigan","sight","chiaroscuro","art","lagniappe",
  "gift","bricolage","build","anemone","bloom","caesura","line","ukulele","rhythm"
 ]);
 
@@ -246,23 +246,41 @@ typedEl.addEventListener('keydown', (e)=>{
   }
 });
 
-let autocorrectTimer = null;
+function autocorrectWord(word){
+  const low = word.toLowerCase();
+  if (DICT.has(low)) return word;
+  let best = word, bestd = 2;
+  for (const w of DICT){
+    const d = lev(low, w);
+    if (d < bestd){ bestd=d; best=w; if (bestd===1) break; }
+  }
+  if (bestd <= 1){
+    return (/[A-Z]/.test(word[0]) ? best[0].toUpperCase()+best.slice(1) : best);
+  }
+  return word;
+}
 
-typedEl.addEventListener('input', ()=>{
-  if (!current || current.condition!=="AUTO") return;
+typedEl.addEventListener('input', (e)=>{
+  if (!current || current.condition !== "AUTO") return;
 
-  clearTimeout(autocorrectTimer);
-  autocorrectTimer = setTimeout(()=>{
-    // only run autocorrect if user hasn't typed for 500 ms
-    const before = typedEl.value;
-    const corrected = autocorrectInput(before);
-    if (corrected !== before){
-      const pos = typedEl.selectionStart;
-      typedEl.value = corrected;
-      typedEl.selectionEnd = typedEl.selectionStart = pos;
+  const before = typedEl.value;
+  const lastChar = before.slice(-1);
+
+  // Trigger autocorrect when space or punctuation is pressed
+  if (/\s|[.,!?]/.test(lastChar)) {
+    // Split into words and correct the one before the space
+    const parts = before.trimEnd().split(/\s+/);
+    if (parts.length > 0) {
+      const lastWord = parts[parts.length - 1];
+      const correctedWord = autocorrectWord(lastWord);
+      if (correctedWord !== lastWord) {
+        parts[parts.length - 1] = correctedWord;
+        typedEl.value = parts.join(" ") + lastChar; // restore space/punctuation
+      }
     }
-  }, 1000); // half a second delay
+  }
 });
+
 
 
 document.getElementById('skip').onclick = ()=>finishTrial(typedEl.value);

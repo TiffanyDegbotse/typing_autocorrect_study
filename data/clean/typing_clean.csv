@@ -1,0 +1,201 @@
+participant,trial,condition,prompt_type,prompt,typed,ms,wpm,cer,backspaces,repair_ms
+Tiffany,1,OFF,HARD,mnemonic trick,mnemonic trick,6039,27.82,0.0,0,0
+Tiffany,2,AUTO,HARD,chiaroscuro art,chiaroscuro art,6632,27.14,0.0,0,0
+Tiffany,3,OFF,HARD,apocryphal tale,apocryphal tale,8352,21.55,0.0,0,0
+Tiffany,4,OFF,HARD,mnemonic trick,mnemonic trick,5417,31.01,0.0,0,0
+Tiffany,5,OFF,HARD,rhythmic sync,rhythmic sync,6733,23.17,0.0,1,1997
+Tiffany,6,AUTO,HARD,hors d'oeuvre prep,hors d'oeuvre prep,10844,19.92,0.0,0,0
+Tiffany,7,OFF,EASY,campus life,campus life,3065,43.07,0.0,0,0
+Tiffany,8,AUTO,HARD,bricolage build,bricolage build,4164,43.23,0.0,0,0
+Tiffany,9,AUTO,HARD,schadenfreude day,schadenfreude day ,11952,18.07,0.0588,3,3196
+Tiffany,10,OFF,HARD,schadenfreude day,schadenfreude day,10342,19.73,0.0,0,0
+Tiffany,11,AUTO,EASY,campus life,campus life,2961,44.57,0.0,0,0
+Tiffany,12,AUTO,HARD,caesura line,caesura line,4059,35.48,0.0,0,0
+Tiffany,13,OFF,EASY,project status,project status,3560,47.19,0.0,0,0
+Tiffany,14,AUTO,EASY,project status,project status,5152,32.61,0.0,0,0
+Tiffany,15,AUTO,HARD,coalesce soon,coalesce soon,5612,27.8,0.0,0,0
+Tiffany,16,AUTO,EASY,great work,great work,3378,35.52,0.0,0,0
+Tiffany,17,AUTO,EASY,clean data,clean data,2871,41.8,0.0,0,0
+Tiffany,18,OFF,EASY,model check,model check,6174,21.38,0.0,3,1714
+Tiffany,19,AUTO,EASY,campus life,campus life,4437,29.75,0.0,0,0
+Tiffany,20,AUTO,EASY,good morning,good morning,4821,29.87,0.0,0,0
+Tiffany,21,AUTO,EASY,data science,data science,3269,44.05,0.0,0,0
+Tiffany,22,AUTO,HARD,afficionados meet,afficionados meet,5797,35.19,0.0,0,0
+Tiffany,23,AUTO,EASY,great work,great work,2961,40.53,0.0,0,0
+Tiffany,24,AUTO,EASY,good morning,good morning,3499,41.16,0.0,0,0
+Tiffany,25,AUTO,HARD,rhythmic sync,rhythmic sync,6494,24.02,0.0,1,951
+Tiffany,26,AUTO,HARD,aegis of order,aegis of order,5082,33.06,0.0,0,0
+Tiffany,27,OFF,EASY,coffee time,coffee time,4261,30.98,0.0,1,2616
+Tiffany,28,OFF,HARD,quixotic goal,quixotic goal,6095,25.59,0.0,0,0
+Tiffany,29,OFF,EASY,the quick fox,the quick fox,4210,37.05,0.0,0,0
+Tiffany,30,AUTO,HARD,chiaroscuro art,chiaroscuro art,8050,22.36,0.0,1,4640
+Tiffany,31,OFF,EASY,happy path,happy path,2964,40.49,0.0,0,0
+Tiffany,32,OFF,EASY,campus life,campus life,2901,45.51,0.0,0,0
+Tiffany,33,OFF,EASY,model update,model update,3276,43.95,0.0,0,0
+Tiffany,34,AUTO,EASY,fast typing,fast typing,2811,46.96,0.0,0,0
+Tiffany,35,OFF,EASY,model check,model check,2644,49.93,0.0,0,0
+Tiffany,36,OFF,EASY,happy path,happy path,2654,45.22,0.0,0,0
+Tiffany,37,OFF,HARD,aegis of order,aegis of order,3842,43.73,0.0,0,0
+Tiffany,38,OFF,HARD,caesura line,caesura line,5349,26.92,0.0,1,3073
+Tiffany,39,AUTO,HARD,phlegmatic mood,phlegmatic mood,4925,36.55,0.0,0,0
+Tiffany,40,OFF,HARD,coalesce soon,coalesce soon,5061,30.83,0.0,0,0
+Tiffany,41,OFF,HARD,afficionados meet,afficionados meet,19680,10.37,0.0,2,9996
+Tiffany,42,OFF,EASY,fast typing,fast typing,2815,46.9,0.0,0,0
+Tiffany,43,OFF,EASY,duke pratt,duke pratt,2859,41.98,0.0,0,0
+Tiffany,44,OFF,EASY,table chart,table chart,4092,32.26,0.0,0,0
+Tiffany,45,OFF,HARD,hors d'oeuvre prep,hors d'oeuvre prep,11128,19.41,0.0,1,7144
+Tiffany,46,AUTO,HARD,doppelganger spot,doppelganger spot,24127,8.46,0.0,14,15440
+Tiffany,47,AUTO,EASY,happy path,happy path,3230,37.15,0.0,0,0
+Tiffany,48,OFF,HARD,anemone bloom,anemone bloom,5181,30.11,0.0,0,0
+Tiffany,49,OFF,HARD,doppelganger spot,doppelganger spot,8376,24.35,0.0,1,3551
+Tiffany,50,OFF,EASY,happy path,happy path,3173,37.82,0.0,0,0
+Tiffany,51,AUTO,EASY,clean data,clean data,2911,41.23,0.0,0,0
+Tiffany,52,OFF,HARD,coalesce soon,coalesce soon,4678,33.35,0.0,0,0
+Tiffany,53,OFF,EASY,final report,final report,2875,50.09,0.0,0,0
+Tiffany,54,AUTO,HARD,caesura line,caesura line,4352,33.09,0.0,0,0
+Tiffany,55,AUTO,HARD,bricolage build,bricolage build,4479,40.19,0.0,0,0
+Tiffany,56,OFF,EASY,good morning,good morning,2982,48.3,0.0,0,0
+Tiffany,57,OFF,EASY,write code,write code,2509,47.83,0.0,0,0
+Tiffany,58,AUTO,EASY,happy path,happy path,2944,40.77,0.0,0,0
+Tiffany,59,AUTO,EASY,data science,data science,3547,40.59,0.0,0,0
+Tiffany,60,OFF,HARD,anemone bloom,anemone bloom,6070,25.7,0.0,0,0
+Tiffany,61,AUTO,HARD,afficionados meet,afficionados meet,16147,12.63,0.0,1,4663
+Tiffany,62,AUTO,HARD,lagniappe gift,lagniappe gift,7906,21.25,0.0,2,4151
+Tiffany,63,AUTO,HARD,afficionados meet,afficionados meet,8741,23.34,0.0,0,0
+Tiffany,64,OFF,HARD,chiaroscuro art,chiaroscuro art,7114,25.3,0.0,0,0
+Tiffany,65,AUTO,EASY,typing study,typing study,3510,41.03,0.0,0,0
+Tiffany,66,AUTO,HARD,apocryphal tale,apocryphal tale,5788,31.1,0.0,0,0
+Tiffany,67,OFF,EASY,model check,model check,3036,43.47,0.0,0,0
+Tiffany,68,AUTO,HARD,anemone bloom,anemone bloom,6108,25.54,0.0,0,0
+Tiffany,69,OFF,HARD,ukulele rhythm,ukulele rhythm,6188,27.15,0.0,0,0
+Tiffany,70,OFF,EASY,the quick fox,the quick fox,3511,44.44,0.0,0,0
+Tiffany,71,AUTO,HARD,rhythmic sync,rhythmic sync,4917,31.73,0.0,0,0
+Tiffany,72,AUTO,EASY,model update,model update,3322,43.35,0.0,0,0
+Tiffany,73,AUTO,EASY,simple test,simple test,3195,41.31,0.0,0,0
+Tiffany,74,AUTO,EASY,final report,final report,2952,48.78,0.0,0,0
+Tiffany,75,AUTO,EASY,model check,model check,2978,44.33,0.0,0,0
+Tiffany,76,AUTO,HARD,mnemonic trick,mnemonic trick,5701,29.47,0.0,1,1161
+Tiffany,77,OFF,HARD,mnemonic trick,mnemonic trick,5583,30.09,0.0,0,0
+Tiffany,78,AUTO,EASY,table chart,tale chart,2797,42.9,0.0909,0,0
+Tiffany,79,OFF,EASY,clear results,clear results,3663,42.59,0.0,0,0
+Tiffany,80,AUTO,EASY,table chart,tale chart,2913,41.2,0.0909,0,0
+Tiffany,81,OFF,HARD,bricolage build,bricolage build,4584,39.27,0.0,0,0
+Tiffany,82,OFF,HARD,ukulele rhythm,ukulele rhythm,5298,31.71,0.0,0,0
+Tiffany,83,OFF,HARD,afficionados meet,afficionados meet,6880,29.65,0.0,0,0
+Tiffany,84,AUTO,EASY,clean data,clean data,2836,42.32,0.0,0,0
+Tiffany,85,OFF,HARD,syzygy test,syzygy test,6942,19.01,0.0,0,0
+Tiffany,86,OFF,HARD,chiaroscuro art,chiaroscuro art,5836,30.84,0.0,0,0
+Tiffany,87,AUTO,HARD,ukulele rhythm,ukulele rhythm,5436,30.91,0.0,0,0
+Tiffany,88,AUTO,HARD,queueing theory,queueing theory,7875,22.86,0.0,0,0
+Tiffany,89,OFF,EASY,clean data,clean data,2720,44.12,0.0,0,0
+Tiffany,90,AUTO,HARD,coalesce soon,coalesce soon,4968,31.4,0.0,0,0
+Tiffany,91,AUTO,EASY,code review,code review,2735,48.26,0.0,0,0
+Tiffany,92,OFF,EASY,duke pratt,duke pratt,3118,38.49,0.0,0,0
+Tiffany,93,OFF,EASY,data science,data science,2886,49.89,0.0,0,0
+Tiffany,94,OFF,EASY,campus life,campus life,3364,39.23,0.0,0,0
+Tiffany,95,AUTO,HARD,queueing theory,queueing theory,11831,15.21,0.0,5,7983
+Tiffany,96,AUTO,EASY,project status,project status,4590,36.6,0.0,0,0
+Tiffany,97,AUTO,EASY,clear results,clear results,3529,44.21,0.0,0,0
+Tiffany,98,OFF,EASY,clean data,clean data,3044,39.42,0.0,0,0
+Tiffany,99,OFF,HARD,apocryphal tale,apocryphal tale,5764,31.23,0.0,0,0
+Tiffany,100,AUTO,HARD,quixotic goal,quixotic goal,6500,24.0,0.0,0,0
+Tiffany,101,AUTO,EASY,write code,write code,5951,20.17,0.0,2,4225
+Tiffany,102,OFF,EASY,clear results,clear results,5077,30.72,0.0,0,0
+Tiffany,103,AUTO,HARD,aegis of order,aegis of order,4043,41.56,0.0,0,0
+Tiffany,104,OFF,HARD,hors d'oeuvre prep,hors d'oeuvre prep,7800,27.69,0.0,0,0
+Tiffany,105,OFF,EASY,good morning,good morning,3046,47.27,0.0,0,0
+Tiffany,106,AUTO,EASY,typing study,typing study,6114,23.55,0.0,3,4763
+Tiffany,107,AUTO,HARD,ukulele rhythm,ukulele rhythm,6067,27.69,0.0,0,0
+Tiffany,108,OFF,HARD,bricolage build,bricolage build,4169,43.18,0.0,0,0
+Tiffany,109,AUTO,HARD,schadenfreude day,schadenfreude day,8615,23.68,0.0,0,0
+Tiffany,110,AUTO,EASY,the quick fox,the quick fox,3751,41.59,0.0,0,0
+Tiffany,111,OFF,HARD,queueing theory,queueing theory,13966,12.89,0.0,8,11020
+Tiffany,112,OFF,HARD,quixotic goal,quixotic goal,5209,29.95,0.0,0,0
+Tiffany,113,OFF,EASY,fast typing,fast typing,2676,49.33,0.0,0,0
+Tiffany,114,OFF,EASY,clean data,clean data,2550,47.05,0.0,0,0
+Tiffany,115,OFF,EASY,great work,great work,2802,42.83,0.0,0,0
+Tiffany,116,OFF,HARD,doppelganger spot,doppelganger spot,11112,18.36,0.0,5,5517
+Tiffany,117,OFF,HARD,phlegmatic mood,phlegmatic mood,4996,36.03,0.0,0,0
+Tiffany,118,OFF,EASY,data science,data science,2852,50.5,0.0,0,0
+Tiffany,119,OFF,HARD,lagniappe gift,lagniappe gift,6897,24.36,0.0,0,0
+Tiffany,120,OFF,HARD,rhythmic sync,rhythmic sync,4563,34.19,0.0,0,0
+Tiffany,121,AUTO,EASY,fast typing,fast typing,2839,46.49,0.0,0,0
+Tiffany,122,OFF,HARD,caesura line,caesura line,6961,20.69,0.0,0,0
+Tiffany,123,OFF,EASY,write code,write code,3712,32.33,0.0,0,0
+Tiffany,124,AUTO,EASY,simple test,simple tet,3940,30.46,0.0909,0,0
+Tiffany,125,AUTO,EASY,write code,write code,4256,28.19,0.0,0,0
+Tiffany,126,AUTO,EASY,the quick fox,the quick fox,3492,44.68,0.0,0,0
+Tiffany,127,AUTO,EASY,happy path,happy path,2873,41.76,0.0,0,0
+Tiffany,128,AUTO,EASY,model update,model update,2933,49.1,0.0,0,0
+Tiffany,129,AUTO,EASY,clear results,clear results,5119,30.48,0.0,0,0
+Tiffany,130,OFF,HARD,rhythmic sync,rhythmic sync,5516,28.28,0.0,1,1616
+Tiffany,131,OFF,EASY,simple test,simple test,2959,44.62,0.0,0,0
+Tiffany,132,AUTO,HARD,mnemonic trick,mnemonic trick,6117,27.47,0.0,0,0
+Tiffany,133,OFF,EASY,project status,project status,3578,46.95,0.0,0,0
+Tiffany,134,OFF,HARD,ptarmigan sight,ptarmigan sight,8561,21.03,0.0,2,5118
+Tiffany,135,OFF,EASY,coffee time,coffee time,3078,42.89,0.0,0,0
+Tiffany,136,OFF,HARD,syzygy test,syzygy test,7148,18.47,0.0,0,0
+Tiffany,137,AUTO,EASY,coffee time,coffee time,3086,42.78,0.0,0,0
+Tiffany,138,OFF,HARD,queueing theory,queueing theory,6920,26.01,0.0,0,0
+Tiffany,139,AUTO,EASY,final report,final report,2878,50.04,0.0,0,0
+Tiffany,140,AUTO,HARD,phlegmatic mood,phlegmatic mood,5210,34.55,0.0,0,0
+Tiffany,141,OFF,EASY,model update,model update,3125,46.07,0.0,0,0
+Tiffany,142,OFF,HARD,aegis of order,aegis of order,3523,47.69,0.0,0,0
+Tiffany,143,OFF,HARD,afficionados meet,afficionados meet,5619,36.31,0.0,0,0
+Tiffany,144,OFF,HARD,lagniappe gift,lagniappe gift,6069,27.68,0.0,0,0
+Tiffany,145,OFF,EASY,typing study,typing study,4473,32.19,0.0,1,1081
+Tiffany,146,OFF,HARD,syzygy test,syzygy test,5210,25.33,0.0,0,0
+Tiffany,147,AUTO,EASY,duke pratt,duke pratt,2887,41.57,0.0,0,0
+Tiffany,148,AUTO,EASY,coffee time,coffee time,2905,45.44,0.0,0,0
+Tiffany,149,AUTO,EASY,coffee time,coffee time,3254,40.57,0.0,0,0
+Tiffany,150,AUTO,HARD,phlegmatic mood,phlegmatic mood,4183,43.03,0.0,0,0
+Tiffany,151,AUTO,HARD,quixotic goal,quixotic goal,7206,21.65,0.0,1,3556
+Tiffany,152,AUTO,EASY,campus life,campus life,2858,46.18,0.0,0,0
+Tiffany,153,AUTO,EASY,fast typing,fast typing,2883,45.79,0.0,0,0
+Tiffany,154,AUTO,HARD,syzygy test,syzygy test,3914,33.73,0.0,0,0
+Tiffany,155,OFF,EASY,write code,write code,2644,45.39,0.0,0,0
+Tiffany,156,OFF,EASY,code review,code review,3266,40.41,0.0,0,0
+Tiffany,157,AUTO,HARD,hors d'oeuvre prep,hors d'oeuvre prep,6350,34.02,0.0,0,0
+Tiffany,158,AUTO,HARD,syzygy test,syzygy test,5499,24.0,0.0,0,0
+Tiffany,159,AUTO,HARD,quixotic goal,quixotic goal ,7984,21.04,0.0769,0,0
+Tiffany,160,AUTO,EASY,clear results,clear results,3515,44.38,0.0,0,0
+Tiffany,161,AUTO,HARD,anemone bloom,anemone bloom,6544,23.84,0.0,1,2716
+Tiffany,162,OFF,EASY,great work,great work,3175,37.8,0.0,0,0
+Tiffany,163,AUTO,HARD,doppelganger spot,doppelganger spot,6598,30.92,0.0,0,0
+Tiffany,164,OFF,HARD,quixotic goal,quixotic goal,4995,31.23,0.0,0,0
+Tiffany,165,AUTO,EASY,model check,model check,2970,44.45,0.0,0,0
+Tiffany,166,OFF,EASY,clear results,clear results,3315,47.05,0.0,0,0
+Tiffany,167,AUTO,EASY,great work,great work,2919,41.11,0.0,0,0
+Tiffany,168,AUTO,HARD,mnemonic trick,mnemonic trick,4488,37.43,0.0,0,0
+Tiffany,169,OFF,EASY,coffee time,coffee time,2991,44.13,0.0,0,0
+Tiffany,170,AUTO,HARD,ptarmigan sight,ptarmigan sight,8482,21.22,0.0,1,5810
+Tiffany,171,AUTO,EASY,write code,write code,2767,43.38,0.0,0,0
+Tiffany,172,OFF,HARD,schadenfreude day,schadenfreude day,10898,18.72,0.0,5,6982
+Tiffany,173,AUTO,HARD,ptarmigan sight,ptarmigan sight,10104,17.82,0.0,5,5528
+Tiffany,174,OFF,EASY,the quick fox,the quick fox,3413,45.71,0.0,0,0
+Tiffany,175,OFF,EASY,simple test,simple test,3011,43.84,0.0,0,0
+Tiffany,176,AUTO,HARD,coalesce soon,coalesce soon,4983,31.31,0.0,0,0
+Tiffany,177,OFF,EASY,final report,final report,3037,47.42,0.0,0,0
+Tiffany,178,OFF,EASY,table chart,table chart,2993,44.1,0.0,0,0
+Tiffany,179,OFF,HARD,phlegmatic mood,phlegmatic mood,5371,33.51,0.0,0,0
+Tiffany,180,AUTO,HARD,aegis of order,aegis of order,5325,31.55,0.0,1,2701
+Tiffany,181,AUTO,EASY,code review,code review,3199,41.26,0.0,0,0
+Tiffany,182,OFF,EASY,code review,code review,2719,48.55,0.0,0,0
+Tiffany,183,AUTO,HARD,apocryphal tale,apocryphal tale,6995,25.73,0.0,0,0
+Tiffany,184,AUTO,HARD,rhythmic sync,rhythmic sync,4926,31.67,0.0,0,0
+Tiffany,185,OFF,HARD,coalesce soon,coalesce soon,4228,36.9,0.0,0,0
+Tiffany,186,AUTO,HARD,syzygy test,syzygy test,4401,29.99,0.0,0,0
+Tiffany,187,AUTO,HARD,lagniappe gift,lagniappe gift,4541,37.0,0.0,0,0
+Tiffany,188,OFF,HARD,phlegmatic mood,phlegmatic mood,8246,21.83,0.0,5,5185
+Tiffany,189,AUTO,EASY,the quick fox,the quick fox,3480,44.82,0.0,0,0
+Tiffany,190,OFF,EASY,fast typing,fast typing,2955,44.67,0.0,0,0
+Tiffany,191,OFF,HARD,schadenfreude day,schadenfreude day,6143,33.21,0.0,0,0
+Tiffany,192,OFF,HARD,ptarmigan sight,ptarmigan sight,7489,24.03,0.0,1,5318
+Tiffany,193,OFF,EASY,great work,great work\,2908,45.4,0.1,0,0
+Tiffany,194,AUTO,EASY,model check,model check,3011,43.83,0.0,0,0
+Tiffany,195,OFF,EASY,typing study,typing study,3567,40.37,0.0,0,0
+Tiffany,196,AUTO,HARD,queueing theory,queueing theory,7365,24.44,0.0,0,0
+Tiffany,197,AUTO,HARD,schadenfreude day,schadenfreude day,6245,32.67,0.0,0,0
+Tiffany,198,AUTO,EASY,duke pratt,duke pratt,3895,30.81,0.0,0,0
+Tiffany,199,OFF,HARD,queueing theory,queueing theory,7519,23.94,0.0,0,0
+Tiffany,200,OFF,HARD,aegis of order,aegis of order,3912,42.94,0.0,0,0

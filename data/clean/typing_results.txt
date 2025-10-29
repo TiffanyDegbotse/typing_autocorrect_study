@@ -1,0 +1,90 @@
+
+== WPM (AUTO - OFF) overall ==
+n=100, mean_auto=34.357, mean_off=35.415
+mean_diff=-1.058, t=-1.232, p=0.2207, dz=-0.123, 95% CI [-2.761, 0.645]
+
+== CER (AUTO - OFF) overall ==
+n=100, mean_auto=0.004, mean_off=0.001
+mean_diff=0.003, t=1.476, p=0.1431, dz=0.148, 95% CI [-0.001, 0.007]
+
+== WPM EASY (AUTO - OFF) ==
+n=50, mean_diff=-2.309, t=-1.953, p=0.0565, dz=-0.276, CI [-4.685, 0.067]
+
+== WPM HARD (AUTO - OFF) ==
+n=50, mean_diff=0.193, t=0.157, p=0.8758, dz=0.022, CI [-2.280, 2.667]
+
+== CER EASY (AUTO - OFF) ==
+n=50, mean_diff=0.003, t=0.925, p=0.3597, dz=0.131, CI [-0.004, 0.011]
+
+== CER HARD (AUTO - OFF) ==
+n=50, mean_diff=0.003, t=1.416, p=0.1632, dz=0.200, CI [-0.001, 0.007]
+
+=== OLS 2×2 (wpm) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    wpm   R-squared:                       0.488
+Model:                            OLS   Adj. R-squared:                  0.480
+Method:                 Least Squares   F-statistic:                     62.32
+Date:                Tue, 28 Oct 2025   Prob (F-statistic):           2.44e-28
+Time:                        22:42:14   Log-Likelihood:                -671.66
+No. Observations:                 200   AIC:                             1351.
+Df Residuals:                     196   BIC:                             1365.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+Intercept      42.7838      0.993     43.064      0.000      40.824      44.743
+cond_coded     -2.3092      1.405     -1.644      0.102      -5.080       0.462
+hard_coded    -14.7370      1.405    -10.489      0.000     -17.508     -11.966
+interaction     2.5026      1.987      1.259      0.209      -1.416       6.421
+==============================================================================
+Omnibus:                        8.743   Durbin-Watson:                   1.697
+Prob(Omnibus):                  0.013   Jarque-Bera (JB):                8.964
+Skew:                          -0.423   Prob(JB):                       0.0113
+Kurtosis:                       3.600   Cond. No.                         6.85
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Cell means:
+condition      AUTO     OFF
+prompt_type                
+EASY         40.475  42.784
+HARD         28.240  28.047
+
+=== OLS 2×2 (cer) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    cer   R-squared:                       0.018
+Model:                            OLS   Adj. R-squared:                  0.003
+Method:                 Least Squares   F-statistic:                     1.184
+Date:                Tue, 28 Oct 2025   Prob (F-statistic):              0.317
+Time:                        22:42:14   Log-Likelihood:                 562.81
+No. Observations:                 200   AIC:                            -1118.
+Df Residuals:                     196   BIC:                            -1104.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+===============================================================================
+                  coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------
+Intercept       0.0020      0.002      0.965      0.336      -0.002       0.006
+cond_coded      0.0035      0.003      1.178      0.240      -0.002       0.009
+hard_coded     -0.0020      0.003     -0.682      0.496      -0.008       0.004
+interaction    -0.0007      0.004     -0.179      0.859      -0.009       0.007
+==============================================================================
+Omnibus:                      251.730   Durbin-Watson:                   1.687
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             8518.704
+Skew:                           5.547   Prob(JB):                         0.00
+Kurtosis:                      32.986   Cond. No.                         6.85
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Cell means:
+condition     AUTO    OFF
+prompt_type              
+EASY         0.005  0.002
+HARD         0.003  0.000
