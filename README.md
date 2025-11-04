@@ -24,7 +24,7 @@ Edit `data/prompts_easy.txt` and `data/prompts_hard.txt` to your liking.
 ### 4) Clean & analyze
 - python clean_and_analyze.py
 
-## Outputs:
+##### Outputs:
 - Cleaned CSV: data/clean/typing_clean.csv
 - Figures: figures/wpm_box.png, figures/cer_box.png, figures/wpm_bar.png
 
