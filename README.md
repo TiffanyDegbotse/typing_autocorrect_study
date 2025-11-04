@@ -3,7 +3,7 @@
 
 **Design:** Autocorrect (ON/OFF) × Prompt Difficulty (EASY/HARD)  
 **Outcomes:** Words per minute (WPM), Character error rate (CER)  
-**Scope:** Single participant, many trials (balanced across 4 cells)
+**Scope:** Single participant, many trials (200) (balanced across 4 cells)
 
 
 ## Quick Start
