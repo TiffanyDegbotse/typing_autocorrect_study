@@ -1,4 +1,3 @@
-# typing_autocorrect_study
 # Typing Autocorrect Study (Desktop): 2×2 Within-Subject
 
 **Design:** Autocorrect (ON/OFF) × Prompt Difficulty (EASY/HARD)  
@@ -9,7 +8,7 @@
 ## Quick Start
 
 ### 1) Prepare prompts
-Edit `data/prompts_easy.txt` and `data/prompts_hard.txt` to your liking.
+- Edit `data/prompts_easy.txt` and `data/prompts_hard.txt` to your liking.
 
 ### 2) Collect data
 - Open `collect/index.html` in a desktop browser.
